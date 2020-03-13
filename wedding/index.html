@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>EVLENİYORUZ</title>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+          integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+</head>
+<body>
+
+<div class="container mt-5">
+    <h1 class="text-center pb-4">DÜĞÜNÜMÜZ VAR <br />Aydın & İntizar</h1>
+
+    <div class="row">
+        <div class="col-lg-6">
+            <div class="card">
+                <div class="card-header">
+                    YOL TARİFİ
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title">Düğünümüz Poyraz Düğün Salonunda.</h5>
+                    <p class="card-text">Sütçüler caddesi, Düden Şelalesi yolu üzeri (kapalı habibler pazarı yanı) Kepez/Antalya Poyraz Düğün Salonları, ßSalon 2</p>
+                    <p class="card-text">Tarih: 13 Nisan 2020 - Saat 19:30</p>
+                    <a href="https://g.page/PoyrazArena?share" target="_blank" class="btn btn-primary">HARİTADA GÖSTER</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-6 mt-3 mt-lg-0">
+            <div class="card">
+                <div class="card-header">
+                    CANLI YAYIN
+                </div>
+
+                <div class="card-body">
+                    <h5 class="card-title">Düğünümüzü canlı olarak izleyebilirsiniz :)</h5>
+                    <p class="card-text" id="countdown"></p>
+                    <a href="http://213.14.168.4:6501/" id="onair-button" target="_blank" class="btn btn-primary disabled">CANLI YAYINA GİT</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<script>
+    // Set the date we're counting down to
+    var countDownDate = new Date("April 13, 2019 19:30:00").getTime();
+
+    // Update the count down every 1 second
+    var x = setInterval(function () {
+
+        // Get today's date and time
+        var now = new Date().getTime();
+
+        // Find the distance between now and the count down date
+        var distance = countDownDate - now;
+
+        // Time calculations for days, hours, minutes and seconds
+        var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+        // Display the result in the element with id="demo"
+        document.getElementById("countdown").innerHTML = days + " gün " + hours + " saat "
+            + minutes + " dakika " + seconds + " saniye sonra aşağıdaki buton aktif olacak.";
+
+        // If the count down is finished, write some text
+        if (distance < 0) {
+            clearInterval(x);
+            document.getElementById("countdown").innerHTML = "";
+
+            var element = document.getElementById("onair-button");
+            element.classList.remove("disabled");
+        }
+    }, 1000);
+</script>
+
+</body>
+</html>
